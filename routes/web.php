@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClubController;
 use App\Http\Controllers\UserController;
 
 /*
@@ -19,3 +20,6 @@ Route::get('/', function () {
 });
 
 Route::resource('user', UserController::class);
+Route::resource('clubs', ClubController::class);
+
+Route::get('/clubs/create', [ClubController::class, 'create'])->name('clubs.create');
